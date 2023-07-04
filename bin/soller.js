@@ -18,7 +18,7 @@ function attack_surface(files, modifiers_filter) {
 				}).join(', ');
 				var specs = '';
 				if (node.kind === 'library') {
-					specs += noColorOutput ? '[Lib]' : '[Lib]'.yellow;
+					specs += '[Lib]';
 				}
 				if (node.kind != 'interface') {
 					console.log(' + ' + specs + ' ' + name + ' ' + bases);
@@ -55,7 +55,7 @@ function attack_surface(files, modifiers_filter) {
 				if ((!omit) && (!node.isConstructor) && (!node.stateMutability) && (node.visibility != 'private') && (node.visibility != 'internal')) {
 					var payable = '';
 					if (node.stateMutability === 'payable') {
-						payable = noColorOutput ? ' ($)' : ' ($)'.yellow;
+						payable = ' ($)';
 					}
 					var modifiers = '';
 					var _iteratorNormalCompletion2 = true;
